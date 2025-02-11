@@ -5,6 +5,13 @@
 
 #pragma once
 
+// 在包含任何 Windows 头文件之前先包含这些定义
+#define CPPHTTPLIB_OPENSSL_SUPPORT 0
+#define CPPHTTPLIB_ZLIB_SUPPORT 0
+#define CPPHTTPLIB_BROTLI_SUPPORT 0
+#define CPPHTTPLIB_USE_WINHTTP 1
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
+
 #ifndef VC_EXTRALEAN
 #define VC_EXTRALEAN            // 从 Windows 头中排除极少使用的资料
 #endif

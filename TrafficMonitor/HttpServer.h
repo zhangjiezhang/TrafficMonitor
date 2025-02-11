@@ -1,15 +1,4 @@
 #pragma once
-// 禁用 SSL/HTTPS 支持
-#define CPPHTTPLIB_OPENSSL_SUPPORT 0
-// 禁用 Zlib 支持
-#define CPPHTTPLIB_ZLIB_SUPPORT 0
-// 禁用 Brotli 支持
-#define CPPHTTPLIB_BROTLI_SUPPORT 0
-// 使用 WinHTTP 后端
-#define CPPHTTPLIB_USE_WINHTTP 1
-// 禁用 WinSock 废弃函数警告
-#define _WINSOCK_DEPRECATED_NO_WARNINGS
-
 #include "Common.h"
 #include "TaskBarDlg.h"
 #include <httplib.h>
