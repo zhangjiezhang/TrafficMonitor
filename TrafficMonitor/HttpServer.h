@@ -5,6 +5,7 @@
 #include <httplib.h>
 #include <memory>
 #include <string>
+#include <thread>
 
 class CHttpServer
 {
@@ -18,8 +19,10 @@ public:
 private:
 	void SetupRoutes();
 	std::string GetMetricsJson();
+	void RunServer();
 
 	std::unique_ptr<httplib::Server> m_server;
 	CTaskBarDlg* m_taskbar;
 	bool m_running{ false };
+	std::unique_ptr<std::thread> m_thread;
 };

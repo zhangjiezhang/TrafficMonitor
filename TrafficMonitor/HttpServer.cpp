@@ -22,10 +22,7 @@ bool CHttpServer::Start(int port)
 
     SetupRoutes();
 
-    if (!m_server->listen("0.0.0.0", port)) {
-        return false;
-    }
-
+    m_thread = std::make_unique<std::thread>(&CHttpServer::RunServer, this);
     m_running = true;
     return true;
 }
@@ -35,6 +32,10 @@ void CHttpServer::Stop()
     if (!m_running) return;
 
     m_server->stop();
+    if (m_thread && m_thread->joinable())
+    {
+        m_thread->join();
+    }
     m_running = false;
 }
 
@@ -48,6 +49,14 @@ void CHttpServer::SetupRoutes()
         res.set_header("Access-Control-Allow-Origin", "*");
         res.body = GetMetricsJson();
     });
+}
+
+void CHttpServer::RunServer()
+{
+    if (!m_server->listen("0.0.0.0", 12555)) {
+        // ´¦Àí´íÎó
+        m_running = false;
+    }
 }
 
 std::string CHttpServer::GetMetricsJson()
