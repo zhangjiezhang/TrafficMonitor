@@ -801,6 +801,7 @@
     <ClInclude Include="HistoryTrafficFile.h" />
     <ClInclude Include="HistoryTrafficListDlg.h" />
     <ClInclude Include="HResultException.h" />
+    <ClInclude Include="HttpServer.h" />
     <ClInclude Include="IDrawCommon.h" />
     <ClInclude Include="Image2DEffect.h" />
     <ClInclude Include="LinkStatic.h" />
@@ -889,6 +890,7 @@
     <ClCompile Include="HistoryTrafficFile.cpp" />
     <ClCompile Include="HistoryTrafficListDlg.cpp" />
     <ClCompile Include="HResultException.cpp" />
+    <ClCompile Include="HttpServer.cpp" />
     <ClCompile Include="Image2DEffect.cpp" />
     <ClCompile Include="LinkStatic.cpp" />
     <ClCompile Include="ColorStatic.cpp" />

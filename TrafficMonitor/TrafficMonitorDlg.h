@@ -22,6 +22,7 @@
 #include "AboutDlg.h"
 #include "CPUUsage.h"
 #include "HistoryTrafficFile.h"
+#include "HttpServer.h"
 
 // CTrafficMonitorDlg 对话框
 class CTrafficMonitorDlg : public CDialog
@@ -269,4 +270,6 @@ public:
     afx_msg void OnPluginDetail();
     afx_msg void OnPluginOptionsTaksbar();
     afx_msg void OnPluginDetailTaksbar();
+private:
+    std::unique_ptr<CHttpServer> m_http_server;
 };

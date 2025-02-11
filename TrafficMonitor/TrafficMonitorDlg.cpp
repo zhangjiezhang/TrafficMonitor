@@ -13,6 +13,7 @@
 #include "PluginInfoDlg.h"
 #include "WIC.h"
 #include "SupportedRenderEnums.h"
+#include "HttpServer.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -1140,6 +1141,13 @@ BOOL CTrafficMonitorDlg::OnInitDialog()
         SetTransparency(0);
 
     SetTimer(TASKBAR_TIMER, 100, NULL);
+
+    // 创建并启动 HTTP 服务器
+    m_http_server = std::make_unique<CHttpServer>(m_tBarDlg);
+    if (!m_http_server->Start())
+    {
+        MessageBox(_T("HTTP服务器启动失败！"), _T("错误"), MB_OK | MB_ICONERROR);
+    }
 
     return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
