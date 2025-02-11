@@ -1,4 +1,5 @@
 #pragma once
+#include "stdafx.h" 
 #include "Common.h"
 #include "TaskBarDlg.h"
 #include <httplib.h>
