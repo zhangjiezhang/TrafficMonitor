@@ -1,4 +1,6 @@
 #pragma once
+#define CPPHTTPLIB_OPENSSL_SUPPORT 0
+#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #include "Common.h"
 #include "TaskBarDlg.h"
 #include <httplib.h>
